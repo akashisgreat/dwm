@@ -1,0 +1,10 @@
+// https://www.reddit.com/r/suckless/comments/s2wi3k/how_can_i_remove_that_background_color_in_the_dwm/
+// In dwm.c There is a line in drawbar() you can change:
+
+drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+
+Change it to this:
+
+drw_setscheme(drw, scheme[SchemeNorm]);
+
+The line above this is >>> if (m->sel) {
